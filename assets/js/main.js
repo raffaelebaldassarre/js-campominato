@@ -6,7 +6,11 @@ con difficoltà 0 => tra 1 e 100
 con difficoltà 1 =>  tra 1 e 80
 con difficoltà 2 => tra 1 e 50 */
 var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2"))
-
+//CONTROLLO ISNAN
+    while (isNaN(level)){
+        alert("Attenzione per scegliere il livello devi inserire un numero da 0 a 2");
+        var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2"));
+    }
 switch (level) {
     case 0:
         var  x= 100;
@@ -42,6 +46,11 @@ var numberPlayer = [];
 for(i=0; numberPlayer.length< (x - 16); i++){
 
     number = Number(prompt("Inserisci un numero da 1 a " + x));
+//CONTROLLO ISNAN
+    while (isNaN(number)){
+        alert("Attenzione per scegliere il livello devi inserire un numero da 1 a " + x);
+        number = Number(prompt("Inserisci un numero da 1 a " + x));
+    }
     if (numberPc.includes(number)){
         alert("BOOOOMMMMMMM HAI BECCATO UNA MINA..");
 /* 
