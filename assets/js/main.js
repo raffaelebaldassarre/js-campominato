@@ -55,6 +55,7 @@ for(i=0; numberPlayer.length< (x - 16); i++){
 /* 
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. */
         alert("Hai evitato le mine " + numberPlayer.length + " volte su " + (x - 16) + " posti sicuri");
+        alert("Se vuoi giocare ancora aggiorna la pagina!")
         break;
     }
     if(!(numberPlayer.includes(number)) && number <= x && number > 0){
@@ -67,9 +68,7 @@ La partita termina quando il giocatore inserisce un numero “vietato” o raggi
 */
     if(numberPlayer.length > (x - 17)){
         alert("Bravoooo hai VINTO, sei riuscito a evitare tutte le Bombe");
-/* 
-Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. */
-        alert("Il tuo punteggio è " + numberPlayer.length + " volte su " + (x - 16) + " posti sicuri");
+        alert("Se vuoi giocare ancora aggiorna la pagina!");
     }
 }
 console.log(numberPlayer);
