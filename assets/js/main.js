@@ -5,24 +5,23 @@ all’inizio il software richiede anche una difficoltà all’utente che cambia 
 con difficoltà 0 => tra 1 e 100
 con difficoltà 1 =>  tra 1 e 80
 con difficoltà 2 => tra 1 e 50 */
-var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2"))
-//CONTROLLO ISNAN
-    while (isNaN(level)){
-        alert("Attenzione per scegliere il livello devi inserire un numero da 0 a 2");
-        var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2"));
-    }
-switch (level) {
-    case 0:
-        var  x= 100;
-        break;
-    case 1:
-        var  x = 80;
-        break;
-    case 2:
-        var  x= 50;
-        break;
-}
 
+while(level != 0 && level != 1 && level != 2){   
+    var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2")); 
+    switch (level) {
+        case 0:
+            var  x= 100;
+            break;
+        case 1:
+            var  x = 80;
+            break;
+        case 2:
+            var  x= 50;
+            break;
+        default:
+            alert("Attenzione per scegliere il livello devi inserire un numero da 0 a 2");
+    }
+}
 alert("Hai scelto il livello " + level + ": Dovrai evitare " + 16 + " bombe " + "su " + x + " caselle."+"\n\t\t\t\tBuona Fortuna!")
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.    
@@ -83,3 +82,11 @@ var keepPlaying = prompt("Vuoi continuare a giocare? [S]/[N]")
 if (keepPlaying == "N"){
 playing = false;
 } */
+
+/* function verificaNumeri(min,max){
+    while(userNumber < min || userNumber > max){
+    }
+}
+var numeroInserito = alert ("Iserisci un numero compreso tra" + min + "e" + max);
+verificaNumeri(1,x);
+ */
