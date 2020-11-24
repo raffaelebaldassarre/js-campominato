@@ -1,9 +1,33 @@
+alert("\t\tBenvenuto nel gioco del campo minato.\nLa regola del gioco è solo una: NON BECCARE LE BOMBE")
+
+
+/*BONUS: (da fare solo se funziona tutto il resto)
+all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
+con difficoltà 0 => tra 1 e 100
+con difficoltà 1 =>  tra 1 e 80
+con difficoltà 2 => tra 1 e 50 */
+var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2"))
+
+switch (level) {
+    case 0:
+        var  x= 100;
+        break;
+    case 1:
+        var  x = 80;
+        break;
+    case 2:
+        var  x= 50;
+        break;
+}
+
+alert("Hai scelto il livello " + level + ": Dovrai evitare " + 16 + " bombe " + "su " + x + " caselle."+"\n\t\t\t\tBuona Fortuna!")
+
 // Il computer deve generare 16 numeri casuali tra 1 e 100.    
 // I numeri non possono essere duplicati
 var numberPc = [];
 
 while(numberPc.length<16){
-    numeriRandom = Math.floor(Math.random() * 100) + 1;
+    numeriRandom = Math.floor(Math.random() * x) + 1;
     if(!(numberPc.includes(numeriRandom))){
         numberPc.push(numeriRandom);
     }
@@ -16,12 +40,14 @@ console.log(numberPc);
 
 var numberPlayer = [];
 
+for(i=0; numberPlayer.length< (x - 16); i++){
 
-for(i=0; numberPlayer.length<5; i++){
-    number = Number(prompt("Inserisci un numero da 1 a 100"));
+    number = Number(prompt("Inserisci un numero da 1 a " + x));
     if (numberPc.includes(number)){
         alert("BOOOOMMMMMMM HAI BECCATO UNA BOMBA..");
-        alert("Il tuo punteggio è " + numberPlayer.length);
+/* 
+Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. */
+        alert("Il tuo punteggio è " + numberPlayer.length/(x - 16) + "%");
         break;
     }
     if(!(numberPlayer.includes(number))){
@@ -29,22 +55,23 @@ for(i=0; numberPlayer.length<5; i++){
     }else {
         alert("Hai già inserito questo numero, per favore non farlo mai più");
     }
-}
-console.log(numberPlayer);
-
 /*
 La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 */
-
+    if(numberPlayer.length > 83){
+        alert("Bravoooo hai VINTO, sei riuscito a evitare tutte le Bombe");
 /* 
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. */
+        alert("Il tuo punteggio è " + numberPlayer.length/(x - 16) + "%");
+    }
+}
+console.log(numberPlayer);
 
 
+//Play Again
+/* var playing = true;
 
-
-
-/*BONUS: (da fare solo se funziona tutto il resto)
-all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
-con difficoltà 0 => tra 1 e 100
-con difficoltà 1 =>  tra 1 e 80
-con difficoltà 2 => tra 1 e 50 */
+var keepPlaying = prompt("Vuoi continuare a giocare? [S]/[N]")
+if (keepPlaying == "N"){
+playing = false;
+} */
