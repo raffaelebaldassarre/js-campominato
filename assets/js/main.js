@@ -1,6 +1,5 @@
 alert("\t\tBenvenuto nel gioco del campo minato.\nLa regola del gioco è solo una: NON BECCARE LE BOMBE")
 
-
 /*BONUS: (da fare solo se funziona tutto il resto)
 all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
 con difficoltà 0 => tra 1 e 100
