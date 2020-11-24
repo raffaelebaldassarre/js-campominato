@@ -47,7 +47,7 @@ for(i=0; numberPlayer.length< (x - 16); i++){
     number = Number(prompt("Inserisci un numero da 1 a " + x));
 //CONTROLLO ISNAN
     while (isNaN(number)){
-        alert("Attenzione per scegliere il livello devi inserire un numero da 1 a " + x);
+        alert("Attenzione, inserisci un numero da 1 a " + x);
         number = Number(prompt("Inserisci un numero da 1 a " + x));
     }
     if (numberPc.includes(number)){
