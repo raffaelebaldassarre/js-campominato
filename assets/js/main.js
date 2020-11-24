@@ -57,10 +57,10 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
         alert("Hai evitato le mine " + numberPlayer.length + " volte su " + (x - 16) + " posti sicuri");
         break;
     }
-    if(!(numberPlayer.includes(number))){
+    if(!(numberPlayer.includes(number)) && number <= x && number > 0){
         numberPlayer.push(number);
     }else {
-        alert("Hai già inserito questo numero, per favore non farlo mai più");
+        alert("Hai già inserito questo numero, oppure non è compreso tra 1 e " + x + ", prova con un altro numero");
     }
 /*
 La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
@@ -82,11 +82,3 @@ var keepPlaying = prompt("Vuoi continuare a giocare? [S]/[N]")
 if (keepPlaying == "N"){
 playing = false;
 } */
-
-/* function verificaNumeri(min,max){
-    while(userNumber < min || userNumber > max){
-    }
-}
-var numeroInserito = alert ("Iserisci un numero compreso tra" + min + "e" + max);
-verificaNumeri(1,x);
- */
