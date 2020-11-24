@@ -44,10 +44,10 @@ for(i=0; numberPlayer.length< (x - 16); i++){
 
     number = Number(prompt("Inserisci un numero da 1 a " + x));
     if (numberPc.includes(number)){
-        alert("BOOOOMMMMMMM HAI BECCATO UNA BOMBA..");
+        alert("BOOOOMMMMMMM HAI BECCATO UNA MINA..");
 /* 
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. */
-        alert("Il tuo punteggio è " + numberPlayer.length/(x - 16) + "%");
+        alert("Hai evitato le mine " + numberPlayer.length + " volte su " + (x - 16) + " posti sicuri");
         break;
     }
     if(!(numberPlayer.includes(number))){
@@ -58,11 +58,11 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 /*
 La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 */
-    if(numberPlayer.length > 83){
+    if(numberPlayer.length > (x - 17)){
         alert("Bravoooo hai VINTO, sei riuscito a evitare tutte le Bombe");
 /* 
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. */
-        alert("Il tuo punteggio è " + numberPlayer.length/(x - 16) + "%");
+        alert("Il tuo punteggio è " + numberPlayer.length + " volte su " + (x - 16) + " posti sicuri");
     }
 }
 console.log(numberPlayer);
