@@ -6,8 +6,8 @@ con difficoltà 0 => tra 1 e 100
 con difficoltà 1 =>  tra 1 e 80
 con difficoltà 2 => tra 1 e 50 */
 
-while(level != 0 && level != 1 && level != 2){   
-    var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2")); 
+while(level != "0" && level != "1" && level != "2"){   
+    var level = prompt("Scegli il livello di difficoltà 0 / 1 / 2"); 
     switch (level) {
         case 0:
             var  x = 100;
