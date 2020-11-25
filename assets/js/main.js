@@ -10,13 +10,13 @@ while(level != 0 && level != 1 && level != 2){
     var level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2")); 
     switch (level) {
         case 0:
-            var  x= 100;
+            var  x = 100;
             break;
         case 1:
             var  x = 80;
             break;
         case 2:
-            var  x= 50;
+            var  x = 50;
             break;
         default:
             alert("Attenzione per scegliere il livello devi inserire un numero da 0 a 2");
@@ -44,12 +44,13 @@ var numberPlayer = [];
 
 for(i=0; numberPlayer.length< (x - 16); i++){
 
-    number = Number(prompt("Inserisci un numero da 1 a " + x));
+   var number = Number(prompt("Inserisci un numero da 1 a " + x));
 //CONTROLLO ISNAN
     while (isNaN(number)){
         alert("Attenzione, inserisci un numero da 1 a " + x);
-        number = Number(prompt("Inserisci un numero da 1 a " + x));
+        number = Number(prompt("Inserisci un numero da 1 a " + x + " in Cifre"));
     }
+
     if (numberPc.includes(number)){
         alert("BOOOOMMMMMMM HAI BECCATO UNA MINA..");
 /* 
@@ -58,6 +59,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
         alert("Se vuoi giocare ancora aggiorna la pagina!")
         break;
     }
+    
     if(!(numberPlayer.includes(number)) && number <= x && number > 0){
         numberPlayer.push(number);
     }else {
