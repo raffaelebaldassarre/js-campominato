@@ -1,4 +1,4 @@
-alert("\t\tBenvenuto nel gioco del campo minato.\nLa regola del gioco è solo una: NON BECCARE LE BOMBE")
+alert("\t\tBenvenuto nel gioco del campo minato.\nLa regola del gioco è solo una: NON BECCARE LE BOMBE");
 
 /*BONUS: (da fare solo se funziona tutto il resto)
 all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
@@ -6,23 +6,27 @@ con difficoltà 0 => tra 1 e 100
 con difficoltà 1 =>  tra 1 e 80
 con difficoltà 2 => tra 1 e 50 */
 
-while(level != "0" && level != "1" && level != "2"){   
-    var level = prompt("Scegli il livello di difficoltà 0 / 1 / 2"); 
+var x;
+var level = -1;
+while(level < 0 || level > 2){
+
+    level = Number(prompt("Scegli il livello di difficoltà 0 / 1 / 2")); 
     switch (level) {
         case 0:
-            var  x = 100;
+            x = 100;
             break;
         case 1:
-            var  x = 80;
+            x = 80;
             break;
         case 2:
-            var  x = 50;
+            x = 50;
             break;
         default:
             alert("Attenzione per scegliere il livello devi inserire un numero da 0 a 2");
+            break;
     }
 }
-alert("Hai scelto il livello " + level + ": Dovrai evitare " + 16 + " bombe " + "su " + x + " caselle."+"\n\t\t\t\tBuona Fortuna!")
+alert("Hai scelto il livello " + level + ": Dovrai evitare " + 16 + " bombe " + "su " + x + " caselle."+"\n\t\t\t\tBuona Fortuna!");
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.    
 // I numeri non possono essere duplicati
@@ -42,7 +46,7 @@ console.log(numberPc);
 
 var numberPlayer = [];
 
-for(i=0; numberPlayer.length< (x - 16); i++){
+while(numberPlayer.length< (x - 16)){
 
    var number = Number(prompt("Inserisci un numero da 1 a " + x));
 //CONTROLLO ISNAN
